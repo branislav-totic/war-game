@@ -51,8 +51,6 @@ class Cat {
         console.log(`${this.name} hit ${target.name} for ${damage}`);
       }
       target.setHealth(damage);
-    } else {
-      clearInterval(this.attackInterval);
     }
   }
 }

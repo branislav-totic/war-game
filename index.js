@@ -30,14 +30,14 @@ const askStartingQuestion = () => {
 const createCats = () => {
   cats = Array.apply(null, Array(catsNum));
 
-  return Promise.all(cats.map((item, i) => new Cat(`Cat ${i + 1}`)));
+  return cats.map((item, i) => new Cat(`Cat ${i + 1}`));
 };
 
 (async function start() {
   // starting game
   console.log(`\x1b[33mHello to War Cat Royal \x1b[0m`);
   await askStartingQuestion();
-  cats = await createCats();
+  cats = createCats();
 
   cats.forEach(i=>i.init(cats));
 
